@@ -1,11 +1,11 @@
 {
-  "name": "msg91",
-  "version": "0.0.6",
+  "name": "msg91-node",
+  "version": "0.1.0",
   "private": false,
-  "description": "API For MSG91 SMS Gateway. - It is not an official version of MSG91",
+  "description": "Official Wrapper of MSG91 API",
   "main": "app.js",
-  "author": "Hiren Soni",
+  "author": "Ayush Verma",
   "license": "ISC",
-  "keywords" : [ "msg91", "API", "node.js"],
-  "repository" : "https://github.com/hirenrojasara/Msg91"
+  "keywords" : [ "msg91", "api", "node.js","wrapper-api","send-otp","transactional-sms","promotional-sms"],
+  "repository" : "https://github.com/MSG91/MSG91-node"
 }

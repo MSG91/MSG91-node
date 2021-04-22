@@ -2,9 +2,10 @@
  *
  * @param authKey
  * @param senderId
- * @param route : Value can be 1 for Promotional Router or 4 for Transactional Route
+ * @param route : Value can be 1 for Promotional Router or 4 for Transactional Route or 106 for SendOTP
+ * @param DLT_TE_ID : Issued DLT template from TRAI
  */
-module.exports = function (authKey, senderId, route) {
+ module.exports = function (authKey, senderId, route) {
 
     if (authKey == null || authKey == "") {
         throw new Error("MSG91 Authorization Key not provided.");
@@ -18,7 +19,7 @@ module.exports = function (authKey, senderId, route) {
         throw new Error("MSG91 router Id is not provided.");
     }
 
-    this.send = function (mobileNos, message, callback) {
+    this.send = function (mobileNos, message, DLT_TE_ID, callback) {
 
         callback = modifyCallbackIfNull(callback);
 
@@ -27,19 +28,8 @@ module.exports = function (authKey, senderId, route) {
         message = validateMessage(message);
 
         var isUnicode = isUnicodeString(message);
-        
-        // for fixing this issue - http://help.msg91.com/article/59-problem-with-plus-sign-api-send-sms
-        
-        var specialChars = ['+', '&', '#', '%', '@', '/', ';', '=', '?', '^', '|']; // EncodeUriComponent Doesn't work on ! * ( ) . _ - ' ~ `
-        
-        if (specialChars.some(function (v) {
-                return message.indexOf(v) >= 0;
-            })) {
-            // if there is at least one special character present in message string
-            message = encodeURIComponent(encodeURIComponent(message));
-        }
-
-        var postData = "authkey=" + authKey + "&sender=" + senderId + "&mobiles=" + mobileNos + "&message=" + message + "&route=" + route;
+        // Adding support for DLT template to accommodate changes by TRAI
+        var postData = "authkey=" + authKey + "&sender=" + senderId + "&mobiles=" + mobileNos + "&message=" + message + "&route=" + route + "&DLT_TE_ID=" + DLT_TE_ID;
 
         if(isUnicode){
             postData += "&unicode=1";
