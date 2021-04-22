@@ -1,11 +1,29 @@
 {
-  "name": "msg91-node",
+  "name": "@walkover/msg91",
   "version": "0.1.0",
   "private": false,
   "description": "Official Wrapper of MSG91 API",
   "main": "app.js",
   "author": "Ayush Verma",
   "license": "ISC",
-  "keywords" : [ "msg91", "api", "node.js","wrapper-api","send-otp","transactional-sms","promotional-sms"],
-  "repository" : "https://github.com/MSG91/MSG91-node"
+  "keywords": [
+    "msg91",
+    "api",
+    "node.js",
+    "wrapper-api",
+    "send-otp",
+    "transactional-sms",
+    "promotional-sms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSG91/MSG91-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MSG91/MSG91-node/issues"
+  },
+  "homepage": "https://github.com/MSG91/MSG91-node#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
