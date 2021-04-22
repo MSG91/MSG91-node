@@ -1,10 +1,10 @@
 {
   "name": "@walkover/msg91",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
   "description": "Official Wrapper of MSG91 API",
   "main": "app.js",
-  "author": "Ayush Verma",
+  "author": "Walkover Web Solutions",
   "license": "ISC",
   "keywords": [
     "msg91",

@@ -22,7 +22,7 @@ The Node library v1.0 documentation can be found [here](https://github.com/MSG91
 
 ```javascript
 
-var msg91 = require("@walkover/msg91-node")("./index.js")("API_KEY", "SENDER_ID", "ROUTE_NO" );
+var msg91 = require("@walkover/msg91")("API_KEY", "SENDER_ID", "ROUTE_NO" );
 
 
 /**
