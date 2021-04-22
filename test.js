@@ -1,6 +1,3 @@
-/**
- * Created by hiren on 26/11/15.
- */
 
  var msg91 = require("./index")("API", "SENDERID", "ROUTE");
 
